@@ -20,22 +20,27 @@ server.post("/getPedido", function(request, response) {
       //source: "EchoService",
       source: "sirros.net",
       //fulfillmentText: "",
-      fulfillmentMessages: [
-        {
-          card: {
+      fulfillment: {
+        messages: [
+          {
+            type: "basic_card",
             title: "card title",
             subtitle: "card text",
-            imageUri:
-              "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+            formattedText: "formattedText",
+            image: {
+              accessibilityText: "teste card",
+              url:
+                "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
+            },
             buttons: [
               {
-                text: "button text",
-                postback: "https://assistant.google.com/"
+                title: "button text",
+                openUrlAction: { url: "https://assistant.google.com/" }
               }
             ]
           }
-        }
-      ]
+        ]
+      }
     })
   );
 
