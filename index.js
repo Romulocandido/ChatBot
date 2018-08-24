@@ -19,7 +19,7 @@ server.post("/getPedido", function(request, response) {
     JSON.stringify({
       //source: "EchoService",
       source: "sirros.net",
-      fulfillmentText: "Isadora pinto!",
+      //fulfillmentText: "",
       fulfillmentMessages: [
         {
           card: {
