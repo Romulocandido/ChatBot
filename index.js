@@ -18,7 +18,23 @@ server.post("/getPedido", function(request, response) {
   response.send(
     JSON.stringify({
       //   source: "EchoService",
-      fulfillmentText: "Isadora pinto!"
+      //fulfillmentText: "Isadora pinto!"
+      fulfillmentMessages: [
+        {
+          card: {
+            title: "card title",
+            subtitle: "card text",
+            imageUri:
+              "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+            buttons: [
+              {
+                text: "button text",
+                postback: "https://assistant.google.com/"
+              }
+            ]
+          }
+        }
+      ]
     })
   );
 
