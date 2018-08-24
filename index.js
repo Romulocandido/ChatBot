@@ -19,28 +19,23 @@ server.post("/getPedido", function(request, response) {
     JSON.stringify({
       //source: "EchoService",
       source: "sirros.net",
-      //fulfillmentText: "",
-      fulfillment: {
-        messages: [
-          {
-            type: "basic_card",
+      //fulfillmentText: "Isadora pinto!"
+      fulfillmentMessages: [
+        {
+          card: {
             title: "card title",
             subtitle: "card text",
-            formattedText: "formattedText",
-            image: {
-              accessibilityText: "teste card",
-              url:
-                "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
-            },
+            imageUri:
+              "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
             buttons: [
               {
-                title: "button text",
-                openUrlAction: { url: "https://assistant.google.com/" }
+                text: "button text",
+                postback: "https://assistant.google.com/"
               }
             ]
           }
-        ]
-      }
+        }
+      ]
     })
   );
 
